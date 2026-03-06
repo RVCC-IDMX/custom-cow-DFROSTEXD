@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["text", "song", "artist", "category"],
+    "properties": {
+      "text": {
+        "type": "string",
+        "minLength": 1
+      },
+      "song": {
+        "type": "string",
+        "minLength": 1
+      },
+      "artist": {
+        "type": "string",
+        "minLength": 1
+      },
+      "category": {
+        "type": "string",
+        "enum": ["pop", "rock", "rap", "country", "indie", "r&b", "other"]
+      }
+    }
+  }
+}

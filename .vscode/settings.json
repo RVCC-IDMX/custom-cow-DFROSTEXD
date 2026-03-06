@@ -1,21 +1,13 @@
 {
-  // Playground validation — see errors in test-fortune-errors.json immediately
+  // Schema validation for JSON files
   "json.schemas": [
     {
       "fileMatch": ["docs/json-playground/test-*.json"],
       "url": "./docs/json-playground/example-schema-full.json"
+    },
+    {
+      "fileMatch": ["fortunes.json"],
+      "url": "./fortunes.schema.json"
     }
   ]
-
-  // After you create fortunes.schema.json in Part 1, replace the above with:
-  // "json.schemas": [
-  //   {
-  //     "fileMatch": ["docs/json-playground/test-*.json"],
-  //     "url": "./docs/json-playground/example-schema-full.json"
-  //   },
-  //   {
-  //     "fileMatch": ["fortunes.json"],
-  //     "url": "./fortunes.schema.json"
-  //   }
-  // ]
 }
