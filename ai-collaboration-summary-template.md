@@ -1,10 +1,10 @@
 # AI collaboration summary
 
-**Student name:** [Your name]
+**Student name:** William Harvey
 
 **Assignment:** Custom Cow
 
-**Time to complete:** ~10 minutes
+**Time to complete:** 1 hour
 
 ---
 
@@ -14,11 +14,11 @@ Pick ONE decision from this assignment — schema design, upgrade choice, how yo
 
 **What was the decision?**
 
-[Describe it briefly]
+I chose to go with a simple schema structure. It has four fields that has to do with music, those being a lyric of a song, the song, the artist, and genre.
 
 **What alternatives did you consider?**
 
-[What other options existed? Why did you choose this one?]
+I wanted to add more fields, but I felt like keeping it simple would be more than enough, especially since most people would only care about the song, artists, and genre.
 
 ---
 
@@ -28,7 +28,7 @@ Describe a moment where AI helped you think differently — not just wrote code 
 
 **What happened?**
 
-[Maybe it suggested an approach you hadn't considered, or asked a clarifying question that changed your direction, or surfaced a problem you would have missed]
+When starting this assignment, I really didn't understand where to start. So I asked the AI to give me some examples, and that's when I landed on using songs for the cowsay. 
 
 ---
 
@@ -38,11 +38,11 @@ Something didn't work at some point. How did you figure it out?
 
 **What broke?**
 
-[Describe the error or unexpected behavior]
+At one point, when I thought I had the assignment complete, I tested all the inputs to get each curated cowsay and found that they weren't following the commands correctly.
 
 **Your debugging process:**
 
-[What did you try? console.log? Re-reading the tutorial? Asking AI differently? Reading the error message more carefully?]
+Me and the AI were looking at ways to fix this, we tried different console commands, and yet nothing prevailed. Then the AI suggested a line of code for debugging, and it ended up fixing it.
 
 ---
 
@@ -50,8 +50,7 @@ Something didn't work at some point. How did you figure it out?
 
 What did you learn that you didn't expect? Or what was harder/easier than you anticipated?
 
-[This could be about JSON, objects, CLI, AI collaboration, or anything else]
-
+I found this assignment to be easier than expected. It didn't come without hiccups of course, but it was a more pleasant assignment than I thought it would be.
 ---
 
 ## Optional

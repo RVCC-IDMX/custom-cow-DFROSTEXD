@@ -4,7 +4,7 @@
 import * as cowsay from "cowsay";
 import fortunes from "./fortunes.json" with { type: "json" };
 
-// TEMPORARY DEBUG - remove later
+// DEBUG
 console.log("Arguments received:", process.argv);
 console.log("Sliced args:", process.argv.slice(2));
 
