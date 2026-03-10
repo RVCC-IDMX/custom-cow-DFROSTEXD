@@ -1,0 +1,44 @@
+[
+  {
+    "text": "Don't stop believin'",
+    "song": "Don't Stop Believin'",
+    "artist": "Journey",
+    "category": "rock"
+  },
+  {
+    "text": "I will always love you",
+    "song": "I Will Always Love You",
+    "artist": "Whitney Houston",
+    "category": "pop"
+  },
+  {
+    "text": "Here comes the sun",
+    "song": "Here Comes the Sun",
+    "artist": "The Beatles",
+    "category": "rock"
+  },
+  {
+    "text": "What a wonderful world",
+    "song": "What a Wonderful World",
+    "artist": "Louis Armstrong",
+    "category": "other"
+  },
+  {
+    "text": "I'm walking on sunshine",
+    "song": "Walking on Sunshine",
+    "artist": "Katrina and the Waves",
+    "category": "pop"
+  },
+  {
+    "text": "Ain't no mountain high enough",
+    "song": "Ain't No Mountain High Enough",
+    "artist": "Marvin Gaye & Tammi Terrell",
+    "category": "r&b"
+  },
+  {
+    "text": "Lean on me when you're not strong",
+    "song": "Lean on Me",
+    "artist": "Bill Withers",
+    "category": "r&b"
+  }
+]

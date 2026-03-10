@@ -2,18 +2,39 @@
 // Based on HAP's Fortunate Cow — you'll refactor this to use JSON objects
 
 import * as cowsay from "cowsay";
+import fortunes from "./fortunes.json" with { type: "json" };
 
-// HAP's learning-themed fortunes
-// In Part 1, you'll move these to fortunes.json and add structure
-const fortunes = [
-  "Errors are teachers in disguise",
-  "Every expert was once a beginner",
-  "Confusion is the first step to clarity",
-  "Ask questions - that's how learning happens",
-  "One small step today, one giant leap tomorrow",
-  "Your code doesn't have to be perfect to be progress",
-  "Debugging is just problem-solving with extra steps",
-];
+// DEBUG
+console.log("Arguments received:", process.argv);
+console.log("Sliced args:", process.argv.slice(2));
+
+// Get command-line arguments (everything after 'npm start')
+const args = process.argv.slice(2);
+const userCategory = args[0]; // First argument is the category filter
+
+// Handle --list flag
+if (userCategory === "--list") {
+  console.log("Available categories:");
+  const categories = [...new Set(fortunes.map(f => f.category))];
+  categories.forEach(cat => console.log(`  - ${cat}`));
+  process.exit(0); // Exit after showing the list
+}
+
+// Handle --count flag
+if (userCategory === "--count") {
+  console.log("Fortune counts by category:");
+  const counts = {};
+  fortunes.forEach(f => {
+    counts[f.category] = (counts[f.category] || 0) + 1;
+  });
+  let total = 0;
+  for (const [category, count] of Object.entries(counts)) {
+    console.log(`  ${category}: ${count}`);
+    total += count;
+  }
+  console.log(`  Total: ${total}`);
+  process.exit(0);
+}
 
 // Get the current hour (0-23)
 // HAP learned that getHours() uses 24-hour time, not 12-hour!
@@ -29,14 +50,39 @@ if (hour < 12) {
   greeting = "Good evening";
 }
 
-// Pick a random fortune
-const randomIndex = Math.floor(Math.random() * fortunes.length);
-const todaysFortune = fortunes[randomIndex];
+// Filter fortunes by category if provided
+let availableFortunes = fortunes;
+if (userCategory) {
+  availableFortunes = fortunes.filter(f => f.category === userCategory);
+  
+  // Handle no matches
+  if (availableFortunes.length === 0) {
+    console.log(`No fortunes found for category "${userCategory}".`);
+    const categories = [...new Set(fortunes.map(f => f.category))];
+    console.log("Available categories:", categories.join(", "));
+    process.exit(1);
+  }
+}
+
+// Pick a random fortune from available ones
+const randomIndex = Math.floor(Math.random() * availableFortunes.length);
+const todaysFortune = availableFortunes[randomIndex];
 
 // Combine greeting and fortune
-const fullMessage = `${greeting}! ${todaysFortune}`;
+const fullMessage = `${greeting}! ${todaysFortune.text}`;
 
-// Display Tux the penguin (HAP likes penguins!)
-// Notice: cowsay.say() takes an OBJECT as its parameter
-const output = cowsay.say({ text: fullMessage, f: "tux" });
+// Choose cow based on category
+let cowCharacter;
+if (todaysFortune.category === "rock") {
+  cowCharacter = "dragon";
+} else if (todaysFortune.category === "pop") {
+  cowCharacter = "bunny";
+} else if (todaysFortune.category === "r&b") {
+  cowCharacter = "elephant";
+} else {
+  cowCharacter = "tux"; // default for country, indie, other
+}
+
+// Display the chosen cow character
+const output = cowsay.say({ text: fullMessage, f: cowCharacter });
 console.log(output);
